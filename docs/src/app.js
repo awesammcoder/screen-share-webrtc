@@ -102,7 +102,7 @@
     sendToSocket: function(stream){
       var peer = new Peer(+new Date(), {
         host: config.host,
-        port: config.port
+        port: config.port,
         secure: true,
         debug: 3
       });
