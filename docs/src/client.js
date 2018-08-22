@@ -3,8 +3,8 @@
   var video = document.getElementById('video-output');
 
   const config = {
-    host: 'screen-share-peerjs-screen-share-peerjs.7e14.starter-us-west-2.openshiftapps.com',
-    port: 5000
+    host: 'screenshare-peerjs.herokuapp.com',
+    port: 48181
   };
 
   var app = {

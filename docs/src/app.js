@@ -2,8 +2,8 @@
   let stream;
 
   const config = {
-    host: 'screen-share-peerjs-screen-share-peerjs.7e14.starter-us-west-2.openshiftapps.com',
-    port: 4000
+    host: 'screenshare-peerjs.herokuapp.com',
+    port: 48181
   };
 
   const runtime = chrome.runtime;
