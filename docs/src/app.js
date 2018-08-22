@@ -101,6 +101,7 @@
 
     sendToSocket: function(stream){
       var peer = new Peer(+new Date(), {
+        secure: true,
         debug: 3
       });
 
