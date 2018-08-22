@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WebRTC Screen Share</title>
+</head>
+<body>
+  <h1>WebRTC Screen Share + NodeJS PeerJs Server + Chrome Extension</h1>
+  <a id="link" href=""></a>
+  <hr>
+  <button id="get-screen">Get the screen</button>
+  <button id="stop-screen" style="display: none">Stop Screen Cast</button>
+  <hr>
+  <video autoplay id="screen-container" width="50%" src=""></video>
+
+  <script src="./src/PeerConnection.js"></script>
+  <script src="./src/app.js"></script>
+</body>
+</html>
