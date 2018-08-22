@@ -107,6 +107,8 @@
         debug: 3
       });
 
+      console.log(peer);
+
       peer.on('open', function(id) {
         link.href =`${location.origin}/screen.html#${id}`;
         link.innerText = `${location.origin}/screen.html#${id}`;
