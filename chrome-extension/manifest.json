@@ -7,7 +7,7 @@
     "persistent": false
   },
   "externally_connectable": {
-    "matches": ["http://*/*", "https://*/*"]
+    "matches": ["https://awesammcoder.github.io/*"]
   },
   "permissions": ["desktopCapture"]
 }

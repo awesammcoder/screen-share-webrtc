@@ -8,7 +8,7 @@
 
   const runtime = chrome.runtime;
   const socket = `${config.host}:${config.port}`;
-  const EXTENSION_ID = `mmegegpoebpjdcgcllkncodemmeglogj`;
+  const EXTENSION_ID = `ckdloahlcnabmaljpbbhkcgngbfdlpbl`;
 
   const link = document.getElementById('link');
   const video = document.getElementById('screen-container');
