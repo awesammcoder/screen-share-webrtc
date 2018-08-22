@@ -29,11 +29,10 @@
     bindEvents: function(){
       getScreen.addEventListener('click', e => {
         runtime.sendMessage(EXTENSION_ID, request, response => {
-
           if (response && response.type === 'success') {
             app.streamSuccess(response);
           } else {
-            app.streamError('Could not get stream');
+            app.streamError(response);
           }
 
         });
@@ -70,6 +69,7 @@
     },
 
     streamError: function(err){
+      console.log(err);
       if(typeof(err) == 'object'){
         console.error(err);
       }else{
