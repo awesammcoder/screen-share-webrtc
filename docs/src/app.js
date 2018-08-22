@@ -3,7 +3,7 @@
 
   const config = {
     host: 'screenshare-peerjs.herokuapp.com',
-    port: 48181
+    port: 22081
   };
 
   const runtime = chrome.runtime;
@@ -101,6 +101,8 @@
 
     sendToSocket: function(stream){
       var peer = new Peer(+new Date(), {
+        host: config.host,
+        port: config.port
         secure: true,
         debug: 3
       });
