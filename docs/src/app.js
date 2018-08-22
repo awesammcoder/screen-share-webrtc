@@ -101,15 +101,12 @@
 
     sendToSocket: function(stream){
       var peer = new Peer(+new Date(), {
-        path: 'server',
-        host: `${config.host}`,
-        port: config.port,
         debug: 3
       });
 
       console.log(peer);
 
-      peer.on('open', function(id) {
+      peer.on('open', function(id){
         link.href =`${location.origin}/screen.html#${id}`;
         link.innerText = `${location.origin}/screen.html#${id}`;
       });
