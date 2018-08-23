@@ -114,9 +114,9 @@
 
     sendToSocket: function(stream){
       var peer = new Peer(+new Date(), {
-        // path: 'server',
-        // host: config.host,
-        // port: config.port,
+        path: 'server',
+        host: config.host,
+        port: config.port,
         debug: 3
       });
 
