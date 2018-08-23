@@ -7,7 +7,7 @@
     "persistent": false
   },
   "externally_connectable": {
-    "matches": ["http://awesammcoder.github.io/*", "https://awesammcoder.github.io/*", "https://site-sammuelapa.000webhostapp/*", "http://site-sammuelapa.000webhostapp/*"]
+    "matches": ["http://awesammcoder.github.io/*", "https://awesammcoder.github.io/*", "https://site-sammuelapa.000webhostapp/*", "http://site-sammuelapa.000webhostapp/*", "http://localhost/*", "https://localhost/*"]
   },
   "permissions": ["desktopCapture"]
 }

@@ -2,15 +2,28 @@
   var sessionId = location.hash.trim() ? location.hash.trim().substr(1, location.hash.trim().length) : null;
   var video = document.getElementById('video-output');
 
-  const config = {
-    host: 'screenshare-peerjs.herokuapp.com',
-    port: 48181
+  let config = {
+    host: 'awesamm-peerjs-server.herokuapp.com',
+    port: 4000
   };
 
   var app = {
     init: function(){
-      this.peer = this.createPeer();
-      this.peerEvents();
+      this.getPort(() => {
+        this.peer = this.createPeer();
+        this.peerEvents();
+      });
+    },
+
+    getPort: function(callback){
+      $.ajax({
+        url: 'https://' + config.host,
+        type: 'GET',
+        success: function(res){
+          config.port = res.port;
+          callback();
+        }
+      });
     },
 
     createPeer: function(){

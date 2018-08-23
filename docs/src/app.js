@@ -1,9 +1,9 @@
 (function(){
   let stream;
 
-  const config = {
-    host: 'screenshare-peerjs.herokuapp.com',
-    port: 22081
+  let config = {
+    host: 'awesamm-original-peerjs.herokuapp.com',
+    port: 11842
   };
 
   const runtime = chrome.runtime;
@@ -21,14 +21,28 @@
 
   const app = {
     init: function(){
+      this.getPort(() => {
+        this.bindEvents();
+        this.postLoad();
+      });
+    },
 
-      this.bindEvents();
-      this.postLoad();
+    getPort: function(callback){
+      callback();
+      // $.ajax({
+      //   url: 'https://' + config.host,
+      //   type: 'GET',
+      //   success: function(res){
+      //     config.port = res.port;
+      //     callback();
+      //   }
+      // });
     },
 
     bindEvents: function(){
       getScreen.addEventListener('click', e => {
         runtime.sendMessage(EXTENSION_ID, request, response => {
+          console.log(response);
           if (response && response.type === 'success') {
             app.streamSuccess(response);
           } else {
@@ -69,7 +83,6 @@
     },
 
     streamError: function(err){
-      console.log(err);
       if(typeof(err) == 'object'){
         console.error(err);
       }else{
@@ -101,13 +114,11 @@
 
     sendToSocket: function(stream){
       var peer = new Peer(+new Date(), {
-        host: config.host,
-        port: config.port,
-        secure: true,
+        // path: 'server',
+        // host: config.host,
+        // port: config.port,
         debug: 3
       });
-
-      console.log(peer);
 
       peer.on('open', function(id){
         link.href =`${location.origin}/screen.html#${id}`;
@@ -119,7 +130,6 @@
           peer.call(data.peerId.toString(), stream);
         });
       });
-
     }
   };
 
